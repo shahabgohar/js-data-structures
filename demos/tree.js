@@ -17,7 +17,8 @@ async function main() {
         2. Post Order Traverse
         3. In Order Traverse
         4. Breadth First Search
-        5. exit
+        5. compare trees (sample trees will be generated)
+        6. exit
         `)
 
         switch (userChoice) {
@@ -43,6 +44,26 @@ async function main() {
                 }
                 break;
             case 5:
+                console.log('matched tree case: \n ', ' with data: ', data)
+                const sampleTreeOne = new Tree()
+                sampleTreeOne.populateFromArray(data)
+                if(Tree.compare(tree.getRoot(), sampleTreeOne.getRoot())) {
+                    console.log('The Trees are matched')
+                } else {
+                    console.log('The Trees are not matched')
+                }
+                let dataSecond = [7,23,34,10,15,65,44,99,88,24,19]
+                console.log('unmatched tree case \n ', ' sample data: ', dataSecond)
+                const sampleTreeTwo = new Tree()
+                sampleTreeTwo.populateFromArray(dataSecond)
+                if(Tree.compare(tree.getRoot(), sampleTreeTwo.getRoot())) {
+                    console.log('The Trees are matched')
+                } else {
+                    console.log('The Trees are not matched')
+                }
+                
+                break;
+            case 6:
                 shouldExit = true;
                 break;
         
