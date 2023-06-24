@@ -289,14 +289,4 @@ class BinaryTree extends Tree{
     }
 }
 
-// const binaryTree = new BinaryTree()
-// binaryTree.insertFromArray(data)
-// console.log('finding: ', binaryTree.find(100, binaryTree._root))
-// console.log('finding: ', binaryTree.find(70, binaryTree._root))
-// console.log('finding: ', binaryTree.find(50, binaryTree._root))
-// console.log('deleting 50: ', binaryTree.delete(50, binaryTree._root, binaryTree._root))
-// console.log(' in-order traversal ', binaryTree.inOrderTraverse())
-// console.log(' pre-order traversal ', binaryTree.preOrderTraverse())
-// console.log(' post order traversal ', binaryTree.postOrderTraverse())
-
 module.exports = BinaryTree
