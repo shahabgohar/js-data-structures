@@ -129,11 +129,10 @@ class Node {
 
 class Tree {
 
-    #root = undefined
-
-    getRoot() {
-        return this.#root
+    constructor() {
+        this._root = undefined
     }
+
 
     #fill(currentIndex, arr, queue) {
 
@@ -157,9 +156,9 @@ class Tree {
 
         // recursive case
         if(queue.getlength() === 0) {
-            this.#root = new Node()
-            this.#root.value = arr[currentIndex]
-            queue.push(this.#root)
+            this._root = new Node()
+            this._root.value = arr[currentIndex]
+            queue.push(this._root)
             this.#fill(currentIndex + 1, arr, queue)
         } else {
             const head = queue.getHead()
@@ -226,28 +225,28 @@ class Tree {
     }
     preOrderTraverse() {
         const arr = []
-        this.#walk(this.#root, arr, PRE_ORDER)
+        this.#walk(this._root, arr, PRE_ORDER)
         return arr
     }
 
     postOrderTraverse() {
         const arr = []
-        this.#walk(this.#root, arr, POST_ORDER)
+        this.#walk(this._root, arr, POST_ORDER)
         return arr
     }
 
 
     inOrderTraverse() {
         const arr = []
-        this.#walk(this.#root, arr, IN_ORDER)
+        this.#walk(this._root, arr, IN_ORDER)
         return arr
     }
 
     breadthFirstSearch(val) {
-        debugger
+
         const queue = new LinkedList()
 
-        queue.push(this.#root)
+        queue.push(this._root)
 
         while(queue.getlength()) {
 
@@ -288,4 +287,7 @@ class Tree {
 
 
 }
-module.exports = Tree
+module.exports = {
+    Tree, 
+    Node
+}

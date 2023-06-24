@@ -1,4 +1,4 @@
-const Tree = require('../tree')
+const {Tree} = require('../tree')
 const {askQuestion, close} = require('../utils')
 
 const tree = new Tree()
