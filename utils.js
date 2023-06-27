@@ -3,11 +3,11 @@ const readline = require('readline').createInterface({
     output: process.stdout
 })
 
-async function askQuestion(question) {
+async function askQuestion(question, cast = 'int') {
     return new Promise((resolve, reject) => {
         readline.question(question, (answer) => {
         
-            resolve(parseInt(answer))
+            resolve(cast === 'int' ? parseInt(answer): answer)
             
         })
     })
